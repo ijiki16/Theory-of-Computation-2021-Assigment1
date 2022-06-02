@@ -64,18 +64,18 @@ class Automate {
     }
 }
 
-let string: String = readLine()!
+let string = readLine()!
 // not det automate
-let natStr: String = readLine()!
+let natStr = readLine()!
 let natArr = natStr.components(separatedBy: " ")
 
-let n: Int = Int(natArr[0])!
-let a: Int = Int(natArr[1])!
-let t: Int = Int(natArr[2])!
+let n = Int(natArr[0])!
+let a = Int(natArr[1])!
+let t = Int(natArr[2])!
 
 // accepts line
 var acceptSet = Set<Int>()
-let acceptStr: String = readLine()!
+let acceptStr = readLine()!
 let acceptArr = acceptStr.components(separatedBy: " ")
 for acc in acceptArr{
     acceptSet.insert(Int(acc)!)
@@ -84,12 +84,12 @@ let nfa = Automate(acceptSet: acceptSet)
 
 // ki moves
 for j in 0..<n{
-    let kmovesStr: String = readLine()!
+    let kmovesStr = readLine()!
     let kmovesArr = kmovesStr.components(separatedBy: " ")
-    let ki: Int = Int(kmovesArr[0])!
+    let ki = Int(kmovesArr[0])!
     for i in 0..<ki{
-        let char: String = kmovesArr[i*2+1]
-        let to: Int = Int(kmovesArr[i*2+2])!
+        let char = kmovesArr[i*2+1]
+        let to = Int(kmovesArr[i*2+2])!
         nfa.addAction(action: Move(char: char, from: j, to: to))
     }
 }
